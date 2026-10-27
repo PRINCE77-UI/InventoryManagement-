@@ -1,0 +1,51 @@
+﻿@model InventoryManagement.Models.Product
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create Product";
+}
+
+<h2>Create Product</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <b>Name:</b>
+    <br />
+    @Html.TextBoxFor(x => x.Name)
+    @Html.ValidationMessageFor(x => x.Name)
+
+    <br />
+    <br />
+
+    <b>Category:</b>
+    <br />
+    @Html.TextBoxFor(x => x.Category)
+    @Html.ValidationMessageFor(x => x.Category)
+
+    <br />
+    <br />
+
+    <b>Price:</b>
+    <br />
+    @Html.TextBoxFor(x => x.Price)
+    @Html.ValidationMessageFor(x => x.Price)
+
+    <br />
+    <br />
+
+    <b>Quantity:</b>
+    <br />
+    @Html.TextBoxFor(x => x.Quantity)
+    @Html.ValidationMessageFor(x => x.Quantity)
+
+    <br />
+    <br />
+
+    <input type="submit" value="Create" />
+}
+
+<br />
+
+@Html.ActionLink("Back to List", "Index")
